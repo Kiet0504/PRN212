@@ -1,0 +1,14 @@
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.deps.json
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.pdb
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.AssemblyInfoInputs.cache
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.AssemblyInfo.cs
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\refint\AppMediaMusic.DAL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.pdb
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\ref\AppMediaMusic.DAL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.runtimeconfig.json
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.csproj.AssemblyReference.cache
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.genruntimeconfig.cache

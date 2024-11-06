@@ -1,0 +1,15 @@
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.deps.json
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.pdb
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.DAL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.DAL.pdb
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.csproj.AssemblyReference.cache
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.AssemblyInfoInputs.cache
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.AssemblyInfo.cs
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMedia.6271179B.Up2Date
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\refint\AppMediaMusic.BLL.dll
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.pdb
+C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\ref\AppMediaMusic.BLL.dll

@@ -1,0 +1,124 @@
+﻿<Window x:Class="AppMediaMusic.PlaylistWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppMediaMusic"
+        mc:Ignorable="d"
+        Title="Playlist" Height="450" Width="800">
+
+    <Border Background="White" CornerRadius="40" Loaded="Window_Loaded">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <!-- Menu app -->
+            <Border Background="White" CornerRadius="40 0 0 40" Grid.RowSpan="2">
+                <StackPanel Margin="0 30 0 0">
+                    <!-- Ellipses -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="63 10 0 10">
+                        <Ellipse Fill="#ff6258" Width="10" Height="10"/>
+                        <Ellipse Fill="#ffbf2f" Width="10" Height="10" Margin="7 0"/>
+                        <Ellipse Fill="#2acb42" Width="10" Height="10"/>
+                    </StackPanel>
+                    <TextBlock Text="LIBRARY" Style="{StaticResource menuTitle}"/>
+
+                    <Button Style="{StaticResource menuButton}">
+                        <Grid>
+                            <TextBlock Text="Home"/>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="PlaylistButton" Style="{StaticResource menuButton}" Background="#02be68" Foreground="White">
+                        <Grid>
+                            <TextBlock Text="Playlists" Margin="0 0 0 2"/>
+                        </Grid>
+                    </Button>
+                    <Button Content="Add Playlist" Style="{StaticResource menuButton}"  Click="AddPlaylistButton_Click"/>
+                    <Button Content="Delete Playlist" Style="{StaticResource menuButton}"  Click="DeletePlayListButton_Click"/>
+                    <Button Content="Update Playlist" Style="{StaticResource menuButton}"  Click="UpdatePlayListButton_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Music Section -->
+            <StackPanel Grid.Column="1" Background="White" Margin="40 20 10 10" Grid.RowSpan="2">
+                <TextBlock Text="Playlists" Style="{StaticResource titelText}" Margin="0 0 0 20"/>
+                <DataGrid x:Name="PlayListDataGrid"
+                      AutoGenerateColumns="False"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">        
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="PlaylistId" Binding="{Binding PlaylistId}" Width="90" />
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                        <DataGridTextColumn Header="Date" Binding="{Binding CreatedDate}" Width="*" />
+                        <DataGridTemplateColumn Header="Actions" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="ViewButton" Content="View" Click="ViewPlaylist_Click" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                <Border x:Name="AddPlaylistPopup" Background="#AAFFFFFF" BorderBrush="Black" BorderThickness="1" CornerRadius="8"
+                Padding="10" Width="300" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="New Playlist" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+
+                        <TextBox x:Name="PlaylistNameTextBox"  Margin="0,0,0,10"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="Save" Click="SaveNewPlaylist_Click" Margin="0,0,5,0"/>
+                            <Button Content="Cancel" Click="CancelNewPlaylist_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border x:Name="UpdatePlaylistPopup" Background="#AAFFFFFF" BorderBrush="Black" BorderThickness="1" CornerRadius="8"
+                Padding="10" Width="300" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="UpdatePlaylist" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+
+                        <TextBox x:Name="UpdatePlaylistNameTextBox"  Margin="0,0,0,10"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="Save" Click="SaveUpdatedPlaylist_Click" Margin="0,0,5,0"/>
+                            <Button Content="Cancel" Click="CancelUpdatePlaylist_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="20" Margin="0 20 0 0">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#30ad9a" Offset="0"/>
+                            <GradientStop Color="#18c274" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.4" Color="#1fae7e"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Border Opacity="0.07" CornerRadius="20">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Images/Music.png"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

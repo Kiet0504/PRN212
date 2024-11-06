@@ -1,0 +1,49 @@
+﻿<Window x:Class="AppMediaMusic.PlaylistDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppMediaMusic"
+        mc:Ignorable="d"
+        Title="PlaylistDetailsWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid>
+        <!-- Media Element to Play Music/Video -->
+        <MediaElement x:Name="mediaPlayer" Height="102" Width="461" HorizontalAlignment="Left" VerticalAlignment="Top"
+                      LoadedBehavior="Manual" UnloadedBehavior="Stop" Margin="26,10,0,0" MediaEnded="MediaPlayer_MediaEnded"/>
+        <ListBox x:Name="track_list" HorizontalAlignment="Center" Height="101" Margin="0,261,0,0" VerticalAlignment="Top" Width="392" Background="Black" Foreground="#FFFCFF00"/>
+        <!-- Controls WrapPanel -->
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
+            <Button Content="Previous" x:Name="btn_previous" Width="100" Margin="5" Click="btn_previous_Click"/>
+            <Button Content="Play" x:Name="btn_play" Width="100" Margin="5" Click="btn_play_Click"/>
+            <Button Content="Pause" x:Name="btn_pause" Width="100" Margin="5" Click="btn_pause_Click"/>
+            <Button Content="Next" x:Name="btn_next" Width="100" Margin="5" Click="btn_next_Click"/>
+            <Button Content="Open" x:Name="btn_open" Width="100" Margin="5" Click="btn_open_Click"/>
+            <Button Content="Delete" x:Name="btn_delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+        </WrapPanel>
+
+        <!-- DataGrid for Playlist Songs -->
+        <DataGrid x:Name="PlaylistSongDataGrid" HorizontalAlignment="Center" Height="200" Margin="0,56,0,0" VerticalAlignment="Top" Width="722" AutoGenerateColumns="False" SelectionChanged="PlaylistSongDataGrid_SelectionChanged"   >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PlaylistsongId" Width="60" Binding="{Binding PlaylistsongId}" />
+                <DataGridTextColumn Header="SongId" Width="60" Binding="{Binding PlaylistId}" />
+                <DataGridTextColumn Header="Title" Width="200" Binding="{Binding SongId}" />
+                <DataGridTextColumn Header="Artist" Width="70" Binding="{Binding AddedAt}" />
+                
+
+
+                <!-- Play Button Column -->
+                <DataGridTemplateColumn Header="Play">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Play" Click="PlayButton_Click" Tag="{Binding FilePath}" Width="50" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+               
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
