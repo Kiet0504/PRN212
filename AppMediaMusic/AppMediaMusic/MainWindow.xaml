@@ -42,9 +42,11 @@
                             <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
                         </Grid>
                     </Button>
+                    <Button Content="Delete " Style="{StaticResource menuButton}"  Click="DeleteSongButton_Click"/>
+                    <Button Content="Add " Style="{StaticResource menuButton}"  Click="AddSongButton_Click"/>
 
 
-                    
+
                 </StackPanel>
 
             </Border>
@@ -72,21 +74,18 @@
                             </Border.Background>
                         </Border>
 
-                        <!--Music List-->
+                        <!-- Music List -->
                         <StackPanel Margin="30">
+                            <TextBlock Text="Song List" Foreground="White" FontSize="26" FontWeight="Bold"/>
 
-
-                            <TextBlock Text="Song" Foreground="White" FontSize="26" FontWeight="Bold"/>
-
-
-                            <uc:SongItem Number="01" Title="Love" Time="03:56"/>
-                            <uc:SongItem Number="02" Title="Wating" Time="03:47"/>
-                            <uc:SongItem Number="03" Title="ME" Time="03:50"/>
-                            <uc:SongItem Number="04" Title="Memory" Time="03:40" IsActive="True"/>
-                            <uc:SongItem Number="05" Title="Blank Space" Time="03:24"/>
-                            <uc:SongItem Number="06" Title="Red" Time="03:35"/>
-                            <uc:SongItem Number="07" Title="Stronger" Time="03:45"/>
-
+                            <!-- DataGrid for displaying Song data -->
+                            <DataGrid x:Name="SongDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Foreground="Black">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Song ID" Binding="{Binding SongId}" Width="*"/>
+                                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
+                                    <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
                         </StackPanel>
                     </Grid>
 

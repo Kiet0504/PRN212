@@ -24,10 +24,11 @@
         </WrapPanel>
 
         <!-- DataGrid for Playlist Songs -->
-        <DataGrid x:Name="PlaylistSongDataGrid" HorizontalAlignment="Center" Height="200" Margin="0,56,0,0" VerticalAlignment="Top" Width="722" AutoGenerateColumns="False" SelectionChanged="PlaylistSongDataGrid_SelectionChanged"   >
+        <DataGrid x:Name="PlaylistSongDataGrid" HorizontalAlignment="Center" Height="200" Margin="0,56,0,0" VerticalAlignment="Top" Width="722" AutoGenerateColumns="False" SelectionChanged="PlaylistSongDataGrid_SelectionChanged"   
+          CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PlaylistsongId" Width="60" Binding="{Binding PlaylistsongId}" />
-                <DataGridTextColumn Header="SongId" Width="60" Binding="{Binding PlaylistId}" />
+                <DataGridTextColumn Header="PlaylistId" Width="60" Binding="{Binding PlaylistId}" />
                 <DataGridTextColumn Header="Title" Width="200" Binding="{Binding SongId}" />
                 <DataGridTextColumn Header="Artist" Width="70" Binding="{Binding AddedAt}" />
                 

@@ -16,9 +16,9 @@ namespace AppMediaMusic.BLL.Services
             return _songRepository.GetSongsByPlaylistId(playListId);
         }
 
-        public void Add(int playlistId, string filePath)
+        public void Add(int playlistId,string songName,string artist, string filePath)
         {
-            _songRepository.Add(playlistId, filePath);
+            _songRepository.Add(playlistId,songName,artist, filePath);
         }
 
 

@@ -36,9 +36,9 @@ namespace AppMediaMusic
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"User ID before fetching playlists: {UserId}", "Debug", MessageBoxButton.OK, MessageBoxImage.Information);
+           
+            PlayListDataGrid.Items.Clear();
 
-     
             PlayListDataGrid.ItemsSource = _service.GetPlaylistsByUserId(UserId);
 
 
@@ -56,9 +56,6 @@ namespace AppMediaMusic
                 {
                 
                     int playlistId = selectedPlaylist.PlaylistId;
-
-                
-                    MessageBox.Show($"Playlist ID is: {playlistId}");
 
                 
                     PlaylistDetailsWindow detailsWindow = new PlaylistDetailsWindow(playlistId);
@@ -119,7 +116,7 @@ namespace AppMediaMusic
         {
 
             var selectedItem = PlayListDataGrid.SelectedItem;
-            // Kiểm tra kiểu và thực hiện xóa
+           
             Playlist? selected = selectedItem as Playlist;
 
             if (selected == null)
@@ -162,22 +159,11 @@ namespace AppMediaMusic
 
             if (selectedPlaylist != null)
             {
-                // truoc khi update 
-                string currentInfo = $"Current Playlist ID: {selectedPlaylist.PlaylistId}\n" +
-                                     $"Current Playlist Name: {selectedPlaylist.Name}\n";
-                                    
-
-                MessageBox.Show(currentInfo, "Selected Playlist Info", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 if (!string.IsNullOrWhiteSpace(playlistName))
                 {
                     selectedPlaylist.Name = playlistName;
 
-                    // check lai data
-                    string currentInfo2 = $"Current Playlist ID: {selectedPlaylist.PlaylistId}\n" +
-                                           $"Current Playlist Name: {selectedPlaylist.Name}\n";
-                                           
-                    MessageBox.Show(currentInfo2, "Selected Playlist Info", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
                     _service.UpdatePlaylist(selectedPlaylist);

@@ -1,54 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|solutionrelative:appmediamusic.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.dal\\repositories\\playlistsongrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|solutionrelative:appmediamusic.dal\\repositories\\playlistsongrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.dal\\repositories\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|solutionrelative:appmediamusic.dal\\repositories\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.dal\\entities\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|solutionrelative:appmediamusic.dal\\entities\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|solutionrelative:appmediamusic.bll\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.bll\\services\\playlistsongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|solutionrelative:appmediamusic.bll\\services\\playlistsongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic.bll\\services\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|solutionrelative:appmediamusic.bll\\services\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic\\playlistwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|solutionrelative:appmediamusic\\playlistwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic\\playlistdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|solutionrelative:appmediamusic\\playlistdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\documents\\github\\prn212\\appmediamusic\\appmediamusic\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|solutionrelative:appmediamusic\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|solutionrelative:appmediamusic\\detailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\documents\\github\\prn212\\appmediamusic\\appmediamusic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|solutionrelative:appmediamusic\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|c:\\users\\pc\\downloads\\appmediamusic\\appmediamusic\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC689419-E005-4198-94BB-C9984E5BFC3B}|AppMediaMusic\\AppMediaMusic.csproj|solutionrelative:appmediamusic\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|c:\\users\\pc\\documents\\github\\prn212\\appmediamusic\\appmediamusic.bll\\services\\songsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69916DA6-FA81-4892-A2D6-EF9236019FAD}|AppMediaMusic.BLL\\AppMediaMusic.BLL.csproj|solutionrelative:appmediamusic.bll\\services\\songsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|c:\\users\\pc\\documents\\github\\prn212\\appmediamusic\\appmediamusic.dal\\repositories\\songsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9318B54B-F051-42B2-9FA5-7692BA7B37DC}|AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj|solutionrelative:appmediamusic.dal\\repositories\\songsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,162 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "AppMediaMusic\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic\\MainWindow.xaml",
+              "RelativeToolTip": "AppMediaMusic\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-07T03:30:13.515Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.DAL\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "AppMediaMusic.DAL\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AppMediaMusic\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic\\MainWindow.xaml.cs",
+              "RelativeToolTip": "AppMediaMusic\\MainWindow.xaml.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAswEsAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:49:37.508Z",
+              "WhenOpened": "2024-11-07T04:28:51.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PlaylistRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\PlaylistRepository.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.DAL\\Repositories\\PlaylistRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\PlaylistRepository.cs",
-              "RelativeToolTip": "AppMediaMusic.DAL\\Repositories\\PlaylistRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Title": "SongsService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\SongsService.cs",
+              "RelativeDocumentMoniker": "AppMediaMusic.BLL\\Services\\SongsService.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\SongsService.cs",
+              "RelativeToolTip": "AppMediaMusic.BLL\\Services\\SongsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:49:33.363Z",
+              "WhenOpened": "2024-11-07T04:24:17.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Playlist.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Entities\\Playlist.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.DAL\\Entities\\Playlist.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Entities\\Playlist.cs",
-              "RelativeToolTip": "AppMediaMusic.DAL\\Entities\\Playlist.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "SongsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\SongsRepository.cs",
+              "RelativeDocumentMoniker": "AppMediaMusic.DAL\\Repositories\\SongsRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\SongsRepository.cs",
+              "RelativeToolTip": "AppMediaMusic.DAL\\Repositories\\SongsRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAUwBwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:49:31.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.BLL\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\UserService.cs",
-              "RelativeToolTip": "AppMediaMusic.BLL\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:49:30.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PlaylistSongService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\PlaylistSongService.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.BLL\\Services\\PlaylistSongService.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\PlaylistSongService.cs",
-              "RelativeToolTip": "AppMediaMusic.BLL\\Services\\PlaylistSongService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:49:25.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PlaylistService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\PlaylistService.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.BLL\\Services\\PlaylistService.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.BLL\\Services\\PlaylistService.cs",
-              "RelativeToolTip": "AppMediaMusic.BLL\\Services\\PlaylistService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:49:23.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PlaylistWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\PlaylistWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic\\PlaylistWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\PlaylistWindow.xaml.cs",
-              "RelativeToolTip": "AppMediaMusic\\PlaylistWindow.xaml.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAiwLwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:48:43.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlaylistSongRepository.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\PlaylistSongRepository.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic.DAL\\Repositories\\PlaylistSongRepository.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\Repositories\\PlaylistSongRepository.cs",
-              "RelativeToolTip": "AppMediaMusic.DAL\\Repositories\\PlaylistSongRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAjwDoAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:39:02.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlaylistDetailsWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\PlaylistDetailsWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic\\PlaylistDetailsWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\PlaylistDetailsWindow.xaml.cs",
-              "RelativeToolTip": "AppMediaMusic\\PlaylistDetailsWindow.xaml.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAmwNAAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:47:56.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\MainWindow.xaml.cs",
-              "RelativeToolTip": "AppMediaMusic\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:47:54.903Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DetailWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\DetailWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic\\DetailWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\DetailWindow.xaml.cs",
-              "RelativeToolTip": "AppMediaMusic\\DetailWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:47:38.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AppMediaMusic\\LoginWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "AppMediaMusic\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:47:32.355Z",
+              "WhenOpened": "2024-11-07T04:22:59.526Z",
               "EditorCaption": ""
             }
           ]

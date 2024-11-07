@@ -1,6 +1,7 @@
 ﻿using AppMediaMusic.BLL.Services;
 using AppMediaMusic.DAL.Entities;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
@@ -31,6 +32,7 @@ namespace AppMediaMusic
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            PlaylistSongDataGrid.Items.Clear();
             PlaylistSongDataGrid.ItemsSource = _playlistSongService.GetSongsByPlaylistId(PlaylistId);
             var songs = _playlistSongService.GetSongsByPlaylistId(PlaylistId);
             foreach (var song in songs)
@@ -147,16 +149,16 @@ namespace AppMediaMusic
             if (index >= 0 && index < track_list.Items.Count)
             {
                 string? filePath = track_list.Items[index].ToString();
-                TimeSpan duration = GetMediaDurationAsTimeSpan(filePath); 
-
-
-                MessageBox.Show($"Duration: {duration} seconds");
-
+            
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+                string[] parts = fileName.Split('-');
+                string songName = parts.Length > 0 ? parts[0] : "";
+                string artist = parts.Length > 1 ? parts[1] : "";
                 mediaPlayer.Source = new Uri(filePath);
                 mediaPlayer.Play();
                 timer.Start();
                 track_list.SelectedIndex = index;
-                _playlistSongService.Add(PlaylistId, filePath);
+                _playlistSongService.Add(PlaylistId,songName,artist ,filePath);
                 FillDataGrid();
 
             }

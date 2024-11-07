@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IANhJ/W1Zp0=",
+  "dgSpecHash": "8TntW5/N8C8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Downloads\\AppMediaMusic\\AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Documents\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

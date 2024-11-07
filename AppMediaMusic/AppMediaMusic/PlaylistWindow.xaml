@@ -54,7 +54,9 @@
                       AutoGenerateColumns="False"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
-                      ScrollViewer.HorizontalScrollBarVisibility="Disabled">        
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      CanUserAddRows="False">
+                  
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="PlaylistId" Binding="{Binding PlaylistId}" Width="90" />
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />

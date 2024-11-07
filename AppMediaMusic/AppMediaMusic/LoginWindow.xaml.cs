@@ -32,7 +32,7 @@ namespace AppMediaMusic
         {
             MainWindow m = new MainWindow();
             string username = UsernameTextBox.Text.Trim();
-            string password = PasswordTextBox.Text;
+            string password = PasswordTextBox.Password;
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please input username & password", "Filed required", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -43,7 +43,7 @@ namespace AppMediaMusic
             if (user == null)
             {
                 {
-                    MessageBox.Show("Invalid", "Wrong credential", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Password or Username is incorrect", "Wrong credential", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
             }

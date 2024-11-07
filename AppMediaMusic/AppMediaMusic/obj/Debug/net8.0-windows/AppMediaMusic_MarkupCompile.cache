@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\
+C:\Users\PC\Documents\GitHub\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\
 AppMediaMusic
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\PC\Downloads\AppMediaMusic\AppMediaMusic\App.xaml
+C:\Users\PC\Documents\GitHub\PRN212\AppMediaMusic\AppMediaMusic\App.xaml
 61999274415
 
 91487683019
-2501099741815
+250702425401
 DetailWindow.xaml;LoginWindow.xaml;MainWindow.xaml;PlaylistDetailsWindow.xaml;PlaylistWindow.xaml;UserControls\SongItem.xaml;
 
 False

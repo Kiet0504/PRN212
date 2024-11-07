@@ -10,9 +10,9 @@
         <Grid>
             <Rectangle  Stroke="Black" Margin="210,130,210,130"/>
             <TextBox x:Name="UsernameTextBox" TextWrapping="Wrap" Text="" Margin="376,214,245,430" Grid.Column="2"/>
-            <TextBox x:Name="PasswordTextBox" TextWrapping="Wrap"  Margin="376,322,245,322" Grid.Column="2"/>
+            <PasswordBox x:Name="PasswordTextBox" Margin="376,322,245,322" Grid.Column="2"/>
             <Label Content="Username" HorizontalAlignment="Left" Height="28" Margin="249,228,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="3.156,1.945"/>
-            <Label Content="Password" HorizontalAlignment="Left" Height="28" Margin="249,0,0,0" VerticalAlignment="Center" Width="92" RenderTransformOrigin="3.156,1.945"/>
+            <Label Content="Password" HorizontalAlignment="Left" Height="28" Margin="249,0,0,0" VerticalAlignment="Center" Width="92" RenderTransformOrigin="3.156,1.945" />
             <Label Content="Login" HorizontalAlignment="Left" Height="34" Margin="505,143,0,0" VerticalAlignment="Top" Width="171"/>
             <Button Content="Login" HorizontalAlignment="Left" Height="51" Margin="271,441,0,0" VerticalAlignment="Top" Width="195" Click="Button_Click"/>
             <Button Content="Quit" HorizontalAlignment="Left" Height="51" Margin="590,441,0,0" VerticalAlignment="Top" Width="196" Click="QuitButton_Click"/>

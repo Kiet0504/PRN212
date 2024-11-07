@@ -38,26 +38,37 @@ namespace AppMediaMusic.DAL.Repositories
                 _context.SaveChanges();
             }
         }
-        public void Add(int playlistId, string filePath)
+        public void Add(int playlistId, string songName,  string artist, string filePath)
         {
-          
-            var playlist = _context.Playlists.Include(p => p.PlaylistSongs).FirstOrDefault(p => p.PlaylistId == playlistId);
+            // Tìm playlist dựa trên playlistId và bao gồm danh sách PlaylistSongs
+            var playlist = _context.Playlists
+                .Include(p => p.PlaylistSongs)
+                .FirstOrDefault(p => p.PlaylistId == playlistId);
+
             if (playlist == null)
             {
                 throw new ArgumentException("Playlist not found.");
             }
 
-          
+         
             var song = _context.Songs.FirstOrDefault(s => s.FilePath == filePath);
             if (song == null)
             {
-                song = new Song { Title = "abc", FilePath = filePath };
+                // Nếu bài hát chưa tồn tại, tạo mới bài hát với các thông tin truyền vào
+                song = new Song
+                {
+                    Title = songName,
+                    Artist = artist,
+                    FilePath = filePath
+                };
                 _context.Songs.Add(song);
                 _context.SaveChanges(); 
             }
 
-           
-            bool isSongInPlaylist = _context.PlaylistSongs.Any(ps => ps.PlaylistId == playlistId && ps.SongId == song.SongId);
+            
+            bool isSongInPlaylist = _context.PlaylistSongs
+                .Any(ps => ps.PlaylistId == playlistId && ps.SongId == song.SongId);
+
             if (!isSongInPlaylist)
             {
                
@@ -67,7 +78,7 @@ namespace AppMediaMusic.DAL.Repositories
                     SongId = song.SongId
                 };
                 _context.PlaylistSongs.Add(playlistSong);
-                _context.SaveChanges();
+                _context.SaveChanges(); 
             }
         }
         public int GetPlaylistIdBySongId(int songId)
