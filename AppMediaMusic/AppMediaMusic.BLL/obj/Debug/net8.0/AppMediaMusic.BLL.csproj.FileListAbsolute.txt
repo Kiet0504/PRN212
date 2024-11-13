@@ -61,3 +61,19 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\refint\AppMediaMusic.BLL.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.pdb
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\ref\AppMediaMusic.BLL.dll
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.deps.json
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.dll
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.pdb
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.DAL.dll
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.DAL.pdb
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.csproj.AssemblyReference.cache
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.AssemblyInfoInputs.cache
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.AssemblyInfo.cs
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.csproj.CoreCompileInputs.cache
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.sourcelink.json
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMedia.6271179B.Up2Date
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.dll
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\refint\AppMediaMusic.BLL.dll
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.pdb
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\ref\AppMediaMusic.BLL.dll

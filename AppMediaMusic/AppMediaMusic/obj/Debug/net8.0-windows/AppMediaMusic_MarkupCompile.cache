@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\
 AppMediaMusic
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic\App.xaml
-6-918409886
+E:\PRNAssignment\PRN212\AppMediaMusic\AppMediaMusic\App.xaml
+7-747835445
 
-9-504339922
-250458715818
-LoginWindow.xaml;MainWindow.xaml;PlaylistDetailsWindow.xaml;PlaylistSelectionWindow.xaml;PlaylistWindow.xaml;UserControls\SongItem.xaml;
+10-607395894
+2501268653758
+LoginWindow.xaml;MainWindow.xaml;PlaylistDetailsWindow.xaml;PlaylistSelectionWindow.xaml;PlaylistWindow.xaml;SongDetail.xaml;UserControls\SongItem.xaml;
 
 False
 

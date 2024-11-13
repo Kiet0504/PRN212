@@ -4344,19 +4344,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\tptha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Tài liệu\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj",
+      "projectUniqueName": "E:\\PRNAssignment\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj",
       "projectName": "AppMediaMusic.DAL",
-      "projectPath": "C:\\Users\\Admin\\OneDrive\\Tài liệu\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive\\Tài liệu\\GitHub\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\obj\\",
+      "projectPath": "E:\\PRNAssignment\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\AppMediaMusic.DAL.csproj",
+      "packagesPath": "C:\\Users\\tptha\\.nuget\\packages\\",
+      "outputPath": "E:\\PRNAssignment\\PRN212\\AppMediaMusic\\AppMediaMusic.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tptha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4432,7 +4432,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
