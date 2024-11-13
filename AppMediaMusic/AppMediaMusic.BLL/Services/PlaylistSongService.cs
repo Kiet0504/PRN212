@@ -4,16 +4,14 @@ using AppMediaMusic.DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppMediaMusic.BLL.Services
 {
     public class PlaylistSongService
     {
-        private PlaylistSongRepository _songRepository = new();
+        private readonly PlaylistSongRepository _songRepository = new PlaylistSongRepository();
+
         public List<PlaylistSong> GetSongsByPlaylistId(int playListId)
         {
             return _songRepository.GetSongsByPlaylistId(playListId);
@@ -21,31 +19,46 @@ namespace AppMediaMusic.BLL.Services
 
         public void Add(int playlistId, string songName, string artist, string filePath)
         {
-            _songRepository.Add(playlistId, songName, artist, filePath);
+            var song = new Song
+            {
+                Title = songName,
+                Artist = artist,
+                FilePath = filePath
+            };
+
+            using (var context = new AssignmentPrnContext())
+            {
+                context.Songs.Add(song);
+                context.SaveChanges();
+
+                var playlistSong = new PlaylistSong
+                {
+                    PlaylistId = playlistId,
+                    SongId = song.SongId
+                };
+
+                context.PlaylistSongs.Add(playlistSong);
+                context.SaveChanges(); 
+            }
         }
 
-
-
-        public void Delete(PlaylistSong x)
+        public void Delete(PlaylistSong playlistSong)
         {
-            _songRepository.Delete(x);
+            _songRepository.Delete(playlistSong);
         }
-        public void GetPlaylistIdBySongId(int songId)
+
+        public int GetPlaylistIdBySongId(int songId)
         {
-
-            _songRepository.GetPlaylistIdBySongId(songId);
+            return _songRepository.GetPlaylistIdBySongId(songId);
         }
 
-        // PlaylistSongService.cs
         public IEnumerable<PlaylistSong> GetSongsByPlaylistId2(int playlistId)
         {
             using var context = new AssignmentPrnContext();
             return context.PlaylistSongs
-                          .Include(ps => ps.Song) // Eager load the Song entity
+                          .Include(ps => ps.Song) 
                           .Where(ps => ps.PlaylistId == playlistId)
                           .ToList();
         }
-
-
     }
 }

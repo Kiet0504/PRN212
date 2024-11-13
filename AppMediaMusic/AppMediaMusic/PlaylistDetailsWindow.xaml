@@ -5,23 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppMediaMusic"
         mc:Ignorable="d"
-        Title="PlaylistDetailsWindow" Height="450" Width="800"
+        Title="PlaylistDetailsWindow" Height="470" Width="800"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
     <Grid>
         <!-- Media Element to Play Music/Video -->
-        <MediaElement x:Name="mediaPlayer" Height="102" Width="461" HorizontalAlignment="Left" VerticalAlignment="Top"
-                      LoadedBehavior="Manual" UnloadedBehavior="Stop" Margin="26,10,0,0" MediaEnded="MediaPlayer_MediaEnded"/>
+        <MediaElement x:Name="mediaPlayer" Height="41" Width="718" HorizontalAlignment="Left" VerticalAlignment="Top"
+                      LoadedBehavior="Manual" UnloadedBehavior="Stop" Margin="39,10,0,0" MediaEnded="MediaPlayer_MediaEnded"/>
+
+        <!-- Time Slider -->
+        <Slider x:Name="timeSlider" VerticalAlignment="Top" Height="20"
+                Margin="39,367,39,0" Minimum="0" Maximum="100" ValueChanged="TimeSlider_ValueChanged"/>
+
+        <!-- Time TextBlock -->
+        <TextBlock x:Name="timeDisplay" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,340,0,0" Width="100" Height="22" Text="00:00"/>
+
         <ListBox x:Name="track_list" HorizontalAlignment="Center" Height="101" Margin="0,261,0,0" VerticalAlignment="Top" Width="392" 
                  Background="Black" Foreground="#FFFCFF00" SelectionChanged="track_list_SelectionChanged"/>
+
         <!-- Controls WrapPanel -->
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
             <Button Content="Previous" x:Name="btn_previous" Width="100" Margin="5" Click="btn_previous_Click"/>
             <Button Content="Play" x:Name="btn_play" Width="100" Margin="5" Click="btn_play_Click"/>
             <Button Content="Pause" x:Name="btn_pause" Width="100" Margin="5" Click="btn_pause_Click"/>
             <Button Content="Next" x:Name="btn_next" Width="100" Margin="5" Click="btn_next_Click"/>
-            <Button Content="Open" x:Name="btn_open" Width="100" Margin="5" Click="btn_open_Click"/>
             <Button Content="Delete" x:Name="btn_delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+            <Button Content="Open from Home" x:Name="btn_open_home" Width="100" Margin="5" Click="btn_open_home_Click"/>
+            <Button Content="Open from file" x:Name="btn_open" Width="100" Margin="5" Click="btn_open_Click"/>
         </WrapPanel>
 
         <!-- DataGrid for Playlist Songs -->
@@ -31,21 +41,15 @@
                 <DataGridTextColumn Header="PlaylistsongId" Width="60" Binding="{Binding PlaylistsongId}" />
                 <DataGridTextColumn Header="PlaylistId" Width="60" Binding="{Binding PlaylistId}" />
                 <DataGridTextColumn Header="Title" Width="200" Binding="{Binding Song.Title}" />
-                <!--<DataGridTextColumn Header="FilePath" Width="200" Binding="{Binding Song.FilePath}" />-->
                 <DataGridTextColumn Header="Artist" Width="70" Binding="{Binding AddedAt}" />
-
-
-
                 <!-- Play Button Column -->
                 <DataGridTemplateColumn Header="Play">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Play" Click="PlayButton_Click" Tag="{Binding Song.FilePath}" Width="50" />
-
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
