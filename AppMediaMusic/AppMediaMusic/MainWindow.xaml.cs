@@ -159,8 +159,19 @@ namespace AppMediaMusic
 
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
-            _player.controls.pause();
+            // Check the current state of the player
+            if (_player.playState == WMPPlayState.wmppsPlaying)
+            {
+                // If currently playing, pause the song
+                _player.controls.pause();
+            }
+            else if (_player.playState == WMPPlayState.wmppsPaused)
+            {
+                // If currently paused, resume playback
+                _player.controls.play();
+            }
         }
+
 
         private void FastForwardButton_Click(object sender, RoutedEventArgs e)
         {
