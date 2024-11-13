@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\BGimg.jpg" />
     <None Remove="Images\Music.png" />
   </ItemGroup>
 
@@ -44,6 +45,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\BGimg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Music.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

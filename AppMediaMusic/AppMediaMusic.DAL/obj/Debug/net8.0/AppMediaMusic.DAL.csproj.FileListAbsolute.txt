@@ -57,3 +57,18 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.pdb
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\ref\AppMediaMusic.DAL.dll
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.deps.json
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.runtimeconfig.json
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.dll
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.pdb
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.sourcelink.json
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.dll
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\refint\AppMediaMusic.DAL.dll
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.pdb
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\ref\AppMediaMusic.DAL.dll
