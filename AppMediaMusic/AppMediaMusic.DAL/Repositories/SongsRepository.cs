@@ -1,10 +1,13 @@
 ﻿using AppMediaMusic.DAL.Entities;
+using TagLib;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+
 
 namespace AppMediaMusic.DAL.Repositories
 {
@@ -22,30 +25,71 @@ namespace AppMediaMusic.DAL.Repositories
 
         public List<Song> GetAll()
         {
-            _context = new();
-            return _context.Songs.ToList();
-            //                                 
+            _context = new AssignmentPrnContext();
+            var songs = _context.Songs.ToList();
+
+            foreach (var song in songs)
+            {
+                try
+                {
+                    // Use TagLib to extract the album art
+                    var file = TagLib.File.Create(song.FilePath);
+                    if (file.Tag.Pictures.Length > 0)
+                    {
+                        // Extract album art as a byte array
+                        byte[] albumArt = file.Tag.Pictures[0].Data.Data;
+
+                        // You can now use albumArt in your application (e.g., bind it to a UI element)
+                        song.AlbumArt = albumArt; // This will hold the album art for display without saving it in the DB
+                    }
+                    else
+                    {
+                        song.AlbumArt = null; // No album art found
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Error retrieving album art for {song.Title}: {e.Message}");
+                    song.AlbumArt = null; // If there's an error, set to null
+                }
+            }
+
+            return songs;
         }
-        public void Add(string songName, string artist, string filePath, DateTime dateAdded)
+        public bool Add(string filePath)
         {
-            var existingSong = _context.Songs.FirstOrDefault(s => s.Title == songName);
+            var file = TagLib.File.Create(filePath);
+            string title = file.Tag.Title ?? "Unknown Title";
+            string artist = file.Tag.FirstPerformer ?? "Unknown Artist";
+            string album = file.Tag.Album ?? "Unknown Album";
+            string genre = file.Tag.FirstGenre ?? "Unknown Genre";
+            DateTime dateAdded = DateTime.Now;
+
+            _context = new AssignmentPrnContext();
+
+            var existingSong = _context.Songs
+                          .FirstOrDefault(s => s.Title == title && s.Artist == artist);
 
             if (existingSong != null)
             {
 
-                return;
+                return false; //song already exist
             }
 
             Song song = new Song
             {
-                Title = songName,
+                Title = title,
                 Artist = artist,
+                Album = album,
+                Genre = genre,
                 FilePath = filePath,
                 CreatedAt = dateAdded
             };
             _context.Songs.Add(song);
             _context.SaveChanges();
-
+            return true;
         }
+
+       
     }
 }

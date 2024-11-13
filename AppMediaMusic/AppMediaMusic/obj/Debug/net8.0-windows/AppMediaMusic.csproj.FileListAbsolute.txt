@@ -509,3 +509,7 @@ C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-window
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\AppMediaMusic.pdb
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\AppMediaMusic.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\ref\AppMediaMusic.dll
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\SongDetail.g.cs
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\bin\Debug\net8.0-windows\taglib-sharp.dll
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\SongDetail.baml
+C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

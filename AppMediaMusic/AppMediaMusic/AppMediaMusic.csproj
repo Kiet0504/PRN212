@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Images\BGimg.jpg" />
+    <None Remove="Images\defaultAlbumArt.jpg" />
     <None Remove="Images\Music.png" />
   </ItemGroup>
 
@@ -46,6 +47,9 @@
 
   <ItemGroup>
     <Resource Include="Images\BGimg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\defaultAlbumArt.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Music.png">

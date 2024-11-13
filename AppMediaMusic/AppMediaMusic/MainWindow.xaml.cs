@@ -1,10 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using WMPLib;
 using System.IO;
 using AppMediaMusic.BLL.Services;
 using AppMediaMusic.DAL.Entities;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace AppMediaMusic
 {
@@ -12,16 +16,17 @@ namespace AppMediaMusic
     {
         private SongsService _songService = new SongsService();
         private WindowsMediaPlayer _player = new WindowsMediaPlayer();
+        private DispatcherTimer _timer;
         private int _currentSongIndex = 0;
         private bool isDraggingSlider = false;
         private PlaylistService _playlistService = new PlaylistService();
 
-
         public MainWindow()
         {
             InitializeComponent();
-            SongDataGrid.ItemsSource = _songService.GetAllSongs();
+            SongListView.ItemsSource = _songService.GetAllSongs();
             _player.settings.volume = (int)(VolumeSlider.Value * 100);
+
         }
 
         public User AuthenticatedUser { get; set; }
@@ -33,16 +38,16 @@ namespace AppMediaMusic
             playlist.ShowDialog();
         }
 
-        private void FillDataGrid()
+        private void FillListView()
         {
-            var song = _songService.GetAllSongs();
-            SongDataGrid.ItemsSource = null;
-            SongDataGrid.ItemsSource = song;
+            var songs = _songService.GetAllSongs();
+            SongListView.ItemsSource = null;
+            SongListView.ItemsSource = songs;
         }
 
         private void DeleteSongButton_Click(object sender, RoutedEventArgs e)
         {
-            var selectedItem = SongDataGrid.SelectedItem as Song;
+            var selectedItem = SongListView.SelectedItem as Song;
 
             if (selectedItem == null)
             {
@@ -54,7 +59,7 @@ namespace AppMediaMusic
             if (answer == MessageBoxResult.No) return;
 
             _songService.Delete(selectedItem);
-            FillDataGrid();
+            FillListView();
         }
 
         private void AddSongButton_Click(object sender, RoutedEventArgs e)
@@ -63,95 +68,167 @@ namespace AppMediaMusic
             openFileDialog.Filter = "Media files (*.mp4;*.mp3)|*.mp4;*.mp3|All files (*.*)|*.*";
             openFileDialog.Multiselect = true;
 
-
             if (openFileDialog.ShowDialog() == true)
             {
                 foreach (string filePath in openFileDialog.FileNames)
                 {
-                    string fileName = Path.GetFileNameWithoutExtension(filePath);
-                    string[] parts = fileName.Split('-');
-                    string songName = parts.Length > 0 ? parts[0] : "";
-                    string artist = parts.Length > 1 ? parts[1] : "";
-                    DateTime dateAdded = DateTime.Now;
-
-
-                    var existingSong = _songService.GetAllSongs().FirstOrDefault(s => s.Title == songName);
-
-                    if (existingSong != null)
+                    bool added = _songService.AddSong(filePath);
+                    if (!added)
                     {
-
-                        MessageBox.Show("This song already exists in the database.", "Duplicate Song", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                    else
-                    {
-
-                        _songService.Add(songName, artist, filePath, dateAdded);
+                        MessageBox.Show($"The song '{System.IO.Path.GetFileNameWithoutExtension(filePath)}' already exists in the database.", "Duplicate Song", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
-
-                FillDataGrid();
+                FillListView();
             }
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (SongDataGrid.SelectedItem is Song selectedSong)
+            if (SongListView.SelectedItem is Song selectedSong)
             {
                 _player.URL = selectedSong.FilePath;
                 _player.controls.play();
-                // Đặt tổng thời gian của bài hát khi bắt đầu phát
+
+                // Set the total time for the selected song when starting
+                if (_player.currentMedia != null)
+                {
+                    TotalTimeText.Text = FormatTime(_player.currentMedia.duration);
+                    TimelineSlider.Maximum = _player.currentMedia.duration; // Set slider's maximum to song duration
+                }
+
                 _player.PlayStateChange += Player_PlayStateChange;
+                StartTimer(); // Start the timer for updating slider
+            }
+        }
+
+        private void ItemPlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button)?.DataContext is Song selectedSong)
+            {
+                // Play the selected song
+                _player.URL = selectedSong.FilePath;
+                _player.controls.play();
+
+                // Set the total time for the selected song
+                if (_player.currentMedia != null)
+                {
+                    // Update the TotalTimeText with the song's total duration
+                    TotalTimeText.Text = FormatTime(_player.currentMedia.duration);
+                    TimelineSlider.Maximum = _player.currentMedia.duration;
+                }
+
+                PauseButton.Content = "⏸ Pause";
                 StartTimer();
             }
         }
 
-        //THỜI LƯỢNG NHẠC
-        private void Player_PlayStateChange(int NewState)
+        private void SongListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (NewState == (int)WMPLib.WMPPlayState.wmppsPlaying)
+            if (SongListView.SelectedItem is Song selectedSong)
             {
-                TotalTimeText.Text = TimeSpan.FromSeconds(_player.currentMedia.duration).ToString(@"mm\:ss");
-                TimelineSlider.Maximum = _player.currentMedia.duration;
+                // Play the selected song
+                _player.URL = selectedSong.FilePath;
+                _player.controls.play();
+
+                // Update the total time for the new song
+                if (_player.currentMedia != null)
+                {
+                    TotalTimeText.Text = FormatTime(_player.currentMedia.duration);
+                    TimelineSlider.Maximum = _player.currentMedia.duration;
+                }
+
+                PauseButton.Content = "⏸ Pause";
+                StartTimer();
             }
+        }
+
+        private string FormatTime(double seconds)
+        {
+            var timeSpan = TimeSpan.FromSeconds(seconds);
+            return timeSpan.ToString(@"mm\:ss");
         }
 
         private void StartTimer()
         {
-            var timer = new System.Windows.Threading.DispatcherTimer
+            var timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(1)
             };
+
             timer.Tick += (s, e) =>
             {
+                // Only update if the song is playing and the slider isn't being dragged
                 if (_player.playState == WMPPlayState.wmppsPlaying && !isDraggingSlider)
                 {
-                    TimelineSlider.Value = _player.controls.currentPosition;
-                    CurrentTimeText.Text = TimeSpan.FromSeconds(_player.controls.currentPosition).ToString(@"mm\:ss");
+                    // Update the current position of the song
+                    double currentPosition = _player.controls.currentPosition;
+
+                    // Update the current time text using the FormatTime method
+                    CurrentTimeText.Text = FormatTime(currentPosition);
+
+                    // Update the slider value only if not dragging
+                    TimelineSlider.Value = currentPosition;
+                    if (!isDraggingSlider)
+                    {
+                        TimelineSlider.Value = currentPosition;
+                    }
                 }
             };
+
             timer.Start();
         }
 
-        private void TimelineSlider_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+
+
+
+
+        private void Player_PlayStateChange(int NewState)
         {
-            isDraggingSlider = true;
+            if (NewState == (int)WMPPlayState.wmppsPlaying)
+            {
+                // Update the total time of the song
+                TotalTimeText.Text = FormatTime(_player.currentMedia.duration);
+
+                // Update the maximum value of the slider to match the song's duration
+                TimelineSlider.Maximum = _player.currentMedia.duration;
+            }
         }
 
-        private void TimelineSlider_PreviewMouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            isDraggingSlider = false;
-            _player.controls.currentPosition = TimelineSlider.Value;
-        }
 
         private void TimelineSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (isDraggingSlider)
             {
-                CurrentTimeText.Text = TimeSpan.FromSeconds(TimelineSlider.Value).ToString(@"mm\:ss");
+                // Set the current position to the new slider value when dragging
+                _player.controls.currentPosition = e.NewValue;
+
+                // Update the current time text immediately
+                CurrentTimeText.Text = FormatTime(e.NewValue);
             }
         }
 
-        //ĐIỀU CHỈNH VOLUME
+
+        private void TimelineSlider_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // Set the flag to true when the user starts dragging the slider
+            isDraggingSlider = true;
+        }
+
+        // Handle mouse up event for the slider (when user stops dragging)
+        private void TimelineSlider_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            // Reset the flag to false when the user stops dragging the slider
+            isDraggingSlider = false;
+
+            // After the user stops dragging, ensure the player updates with the correct time
+            _player.controls.currentPosition = TimelineSlider.Value;
+
+            // Update the current time text immediately after the drag is finished
+            CurrentTimeText.Text = FormatTime(TimelineSlider.Value);
+        }
+
+
+        // Adjust Volume
         private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (_player != null)
@@ -162,19 +239,18 @@ namespace AppMediaMusic
 
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
-            // Check the current state of the player
+            // Check if player is currently playing
             if (_player.playState == WMPPlayState.wmppsPlaying)
             {
-                // If currently playing, pause the song
-                _player.controls.pause();
+                _player.controls.pause(); // Pause playback
+                PauseButton.Content = "▶ Play"; // Update button text to "Play"
             }
             else if (_player.playState == WMPPlayState.wmppsPaused)
             {
-                // If currently paused, resume playback
-                _player.controls.play();
+                _player.controls.play(); // Resume playback
+                PauseButton.Content = "⏸ Pause"; // Update button text to "Pause"
             }
         }
-
 
         private void FastForwardButton_Click(object sender, RoutedEventArgs e)
         {
@@ -209,14 +285,13 @@ namespace AppMediaMusic
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
-            SongDataGrid.ItemsSource = _songService.GetAllSongs();
+            SongListView.ItemsSource = _songService.GetAllSongs();
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
 
         private void AddToPlaylistButton_Click(object sender, RoutedEventArgs e)
         {
@@ -251,7 +326,6 @@ namespace AppMediaMusic
                 MessageBox.Show($"Error adding song to playlist: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
 
     }
 }

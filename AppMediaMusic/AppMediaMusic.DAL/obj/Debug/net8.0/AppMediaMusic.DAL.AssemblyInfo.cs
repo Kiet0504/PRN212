@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppMediaMusic.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51263b5017594b0880c362f6fd9afb0c8b0a58f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b16146c6cdfec5c26f29bc36a9fe32bbebf2595")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppMediaMusic.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppMediaMusic.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
