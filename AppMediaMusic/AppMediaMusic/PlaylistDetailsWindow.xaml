@@ -12,7 +12,8 @@
         <!-- Media Element to Play Music/Video -->
         <MediaElement x:Name="mediaPlayer" Height="102" Width="461" HorizontalAlignment="Left" VerticalAlignment="Top"
                       LoadedBehavior="Manual" UnloadedBehavior="Stop" Margin="26,10,0,0" MediaEnded="MediaPlayer_MediaEnded"/>
-        <ListBox x:Name="track_list" HorizontalAlignment="Center" Height="101" Margin="0,261,0,0" VerticalAlignment="Top" Width="392" Background="Black" Foreground="#FFFCFF00"/>
+        <ListBox x:Name="track_list" HorizontalAlignment="Center" Height="101" Margin="0,261,0,0" VerticalAlignment="Top" Width="392" 
+                 Background="Black" Foreground="#FFFCFF00" SelectionChanged="track_list_SelectionChanged"/>
         <!-- Controls WrapPanel -->
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
             <Button Content="Previous" x:Name="btn_previous" Width="100" Margin="5" Click="btn_previous_Click"/>
@@ -29,21 +30,22 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PlaylistsongId" Width="60" Binding="{Binding PlaylistsongId}" />
                 <DataGridTextColumn Header="PlaylistId" Width="60" Binding="{Binding PlaylistId}" />
-                <DataGridTextColumn Header="Title" Width="200" Binding="{Binding SongId}" />
+                <DataGridTextColumn Header="Title" Width="200" Binding="{Binding Song.Title}" />
+                <!--<DataGridTextColumn Header="FilePath" Width="200" Binding="{Binding Song.FilePath}" />-->
                 <DataGridTextColumn Header="Artist" Width="70" Binding="{Binding AddedAt}" />
-                
+
 
 
                 <!-- Play Button Column -->
                 <DataGridTemplateColumn Header="Play">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Play" Click="PlayButton_Click" Tag="{Binding FilePath}" Width="50" />
+                            <Button Content="Play" Click="PlayButton_Click" Tag="{Binding Song.FilePath}" Width="50" />
 
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-               
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
