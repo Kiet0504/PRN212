@@ -14,6 +14,8 @@ namespace AppMediaMusic
         private WindowsMediaPlayer _player = new WindowsMediaPlayer();
         private int _currentSongIndex = 0;
         private bool isDraggingSlider = false;
+        private PlaylistService _playlistService = new PlaylistService();
+
 
         public MainWindow()
         {
@@ -218,39 +220,36 @@ namespace AppMediaMusic
 
         private void AddToPlaylistButton_Click(object sender, RoutedEventArgs e)
         {
-            // Get the FilePath of the selected song
             var button = sender as Button;
             if (button != null && button.Tag != null)
             {
                 string filePath = button.Tag.ToString();
 
-                // Open the Playlist Selection Window
                 PlaylistSelectionWindow selectionWindow = new PlaylistSelectionWindow();
                 if (selectionWindow.ShowDialog() == true)
                 {
-                    // Get the selected playlist
-                    string selectedPlaylist = selectionWindow.SelectedPlaylist;
-
-                    if (!string.IsNullOrEmpty(selectedPlaylist))
+                    // Get the selected playlist's ID
+                    int selectedPlaylistId;
+                    if (int.TryParse(selectionWindow.SelectedPlaylist, out selectedPlaylistId))
                     {
-                        // Save the FilePath to the selected playlist (implement your save logic here)
-                        SaveSongToPlaylist(filePath, selectedPlaylist);
-
-                        MessageBox.Show($"Song added to {selectedPlaylist}!");
+                        // Save the FilePath to the selected playlist
+                        SaveSongToPlaylist(filePath, selectedPlaylistId);
+                        MessageBox.Show($"Song added to the playlist successfully!");
                     }
                 }
             }
         }
 
-        // Implement the logic to save the song's FilePath to the selected playlist
-        private void SaveSongToPlaylist(string filePath, string playlistName)
+        private void SaveSongToPlaylist(string filePath, int playlistId)
         {
-            // Example: Save the filePath to the selected playlist
-            // You might save this data to a database or a file
-            // Implement your own storage logic here
-
-            // Example: Placeholder code for saving to a playlist
-            // PlaylistManager.AddSongToPlaylist(filePath, playlistName);
+            try
+            {
+                _playlistService.AddSongToPlaylist(filePath, playlistId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding song to playlist: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
