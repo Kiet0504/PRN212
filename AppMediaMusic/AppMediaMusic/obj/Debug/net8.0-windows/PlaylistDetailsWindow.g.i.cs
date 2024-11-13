@@ -10,7 +10,6 @@
 //------------------------------------------------------------------------------
 
 using AppMediaMusic;
-using AppMediaMusic.UserControls;
 using System;
 using System.Diagnostics;
 using System.Windows;
