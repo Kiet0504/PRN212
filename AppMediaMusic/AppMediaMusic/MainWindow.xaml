@@ -77,8 +77,18 @@
                                     <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" Width="150"/>
                                     <DataGridTextColumn Header="Album" Binding="{Binding Album}" Width="140"/>
                                     <DataGridTextColumn Header="Date Added" Binding="{Binding CreatedAt}" Width="110"/>
+
+                                    <!-- New Column for "Add to Playlist" Button -->
+                                    <DataGridTemplateColumn Header="Add to Playlist" Width="120">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="Add" Click="AddToPlaylistButton_Click" Tag="{Binding FilePath}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
+
 
                             <!-- Playback Controls -->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">

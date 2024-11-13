@@ -4,6 +4,7 @@ using WMPLib;
 using System.IO;
 using AppMediaMusic.BLL.Services;
 using AppMediaMusic.DAL.Entities;
+using System.Windows.Controls;
 
 namespace AppMediaMusic
 {
@@ -213,6 +214,45 @@ namespace AppMediaMusic
         {
             Application.Current.Shutdown();
         }
+
+
+        private void AddToPlaylistButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Get the FilePath of the selected song
+            var button = sender as Button;
+            if (button != null && button.Tag != null)
+            {
+                string filePath = button.Tag.ToString();
+
+                // Open the Playlist Selection Window
+                PlaylistSelectionWindow selectionWindow = new PlaylistSelectionWindow();
+                if (selectionWindow.ShowDialog() == true)
+                {
+                    // Get the selected playlist
+                    string selectedPlaylist = selectionWindow.SelectedPlaylist;
+
+                    if (!string.IsNullOrEmpty(selectedPlaylist))
+                    {
+                        // Save the FilePath to the selected playlist (implement your save logic here)
+                        SaveSongToPlaylist(filePath, selectedPlaylist);
+
+                        MessageBox.Show($"Song added to {selectedPlaylist}!");
+                    }
+                }
+            }
+        }
+
+        // Implement the logic to save the song's FilePath to the selected playlist
+        private void SaveSongToPlaylist(string filePath, string playlistName)
+        {
+            // Example: Save the filePath to the selected playlist
+            // You might save this data to a database or a file
+            // Implement your own storage logic here
+
+            // Example: Placeholder code for saving to a playlist
+            // PlaylistManager.AddSongToPlaylist(filePath, playlistName);
+        }
+
 
     }
 }

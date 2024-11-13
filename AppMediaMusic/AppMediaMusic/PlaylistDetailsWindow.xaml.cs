@@ -53,14 +53,15 @@ namespace AppMediaMusic
 
             if (openFileDialog.ShowDialog() == true)
             {
-                string filePath = openFileDialog.FileName;
+                foreach (string filePath in openFileDialog.FileNames)
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(filePath);
+                    string[] parts = fileName.Split('-');
+                    string songName = parts.Length > 0 ? parts[0].Trim() : "Unknown Song";
+                    string artist = parts.Length > 1 ? parts[1].Trim() : "Unknown Artist";
 
-                string fileName = Path.GetFileNameWithoutExtension(filePath);
-                string[] parts = fileName.Split('-');
-                string songName = parts.Length > 0 ? parts[0].Trim() : "Unknown Song";
-                string artist = parts.Length > 1 ? parts[1].Trim() : "Unknown Artist";
-
-                _playlistSongService.Add(PlaylistId, songName, artist, filePath);
+                    _playlistSongService.Add(PlaylistId, songName, artist, filePath);
+                }
 
                 FillDataGrid();
                 AddSongsToListBox();
@@ -100,8 +101,8 @@ namespace AppMediaMusic
         private void PlaylistSongDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             currentIndex = PlaylistSongDataGrid.SelectedIndex;
-            PlayTrackAtIndex(currentIndex);
         }
+
 
         private void MediaPlayer_MediaEnded(object sender, RoutedEventArgs e)
         {
@@ -174,8 +175,21 @@ namespace AppMediaMusic
 
                 if (result == MessageBoxResult.Yes)
                 {
+                    if (mediaPlayer.Source != null &&
+                        mediaPlayer.Source.ToString() == new Uri(selectedSong.Song.FilePath, UriKind.RelativeOrAbsolute).ToString())
+                    {
+                        mediaPlayer.Stop();
+                        mediaPlayer.Source = null;
+                        timer.Stop();
+                        timeSlider.Value = 0;
+                        timeSlider.IsEnabled = false;
+                        timeDisplay.Text = "00:00";
+                    }
+
                     _playlistSongService.Delete(selectedSong);
+
                     FillDataGrid();
+                    AddSongsToListBox();
                 }
             }
             else
@@ -183,6 +197,7 @@ namespace AppMediaMusic
                 MessageBox.Show("No song selected. Please select a song to delete.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         private void FillDataGrid()
         {
@@ -234,6 +249,7 @@ namespace AppMediaMusic
             if (Math.Abs(timeSlider.Value - mediaPlayer.Position.TotalSeconds) > 1) // Kiểm tra thay đổi giá trị
             {
                 mediaPlayer.Position = TimeSpan.FromSeconds(timeSlider.Value);
+                
             }
         }
     }

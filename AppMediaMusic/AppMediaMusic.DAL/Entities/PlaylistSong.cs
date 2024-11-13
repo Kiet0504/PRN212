@@ -16,4 +16,21 @@ public partial class PlaylistSong
     public virtual Playlist Playlist { get; set; } = null!;
 
     public virtual Song Song { get; set; } = null!;
+
+    private void SaveSongToPlaylist(int playlistId, int songId)
+    {
+        using (var context = new AssignmentPrnContext())
+        {
+            var playlistSong = new PlaylistSong
+            {
+                PlaylistId = playlistId,
+                SongId = songId,
+                AddedAt = DateTime.Now
+            };
+
+            context.PlaylistSongs.Add(playlistSong);
+            context.SaveChanges();
+        }
+    }
+
 }
