@@ -70,13 +70,13 @@
                             <TextBlock Text="Song List" Foreground="White" FontSize="26" FontWeight="Bold"/>
 
                             <!-- DataGrid for displaying Song data -->
-                            <DataGrid x:Name="SongDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Foreground="Black" Height="111" Width="452">
+                            <DataGrid x:Name="SongDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Foreground="Black" Height="115" Width="641">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Song ID" Binding="{Binding SongId}" Width="65"/>
-                                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="100"/>
-                                    <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" Width="100"/>
-                                    <DataGridTextColumn Header="Album" Binding="{Binding Album}" Width="85"/>
-                                    <DataGridTextColumn Header="Date Added" Binding="{Binding DateAdded}" Width="100"/>
+                                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="150"/>
+                                    <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" Width="150"/>
+                                    <DataGridTextColumn Header="Album" Binding="{Binding Album}" Width="140"/>
+                                    <DataGridTextColumn Header="Date Added" Binding="{Binding CreatedAt}" Width="110"/>
                                 </DataGrid.Columns>
                             </DataGrid>
 
@@ -88,6 +88,9 @@
                                 <Button Content="⏭" Click="FastForwardButton_Click" Margin="5" Width="30"/>
                                 <Button Content="Previous" Click="PreviousButton_Click" Margin="5" Width="75"/>
                                 <Button Content="Next" Click="NextButton_Click" Margin="5" Width="75"/>
+
+                                <TextBlock Text="Volume" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                                <Slider x:Name="VolumeSlider" Width="100" Minimum="0" Maximum="1" Value="0.5" ValueChanged="VolumeSlider_ValueChanged" Height="19"/>
                             </StackPanel>
                             <!-- Thêm thanh thời gian vào XAML -->
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
@@ -95,7 +98,7 @@
                                 <TextBlock x:Name="CurrentTimeText" Text="0:00" VerticalAlignment="Center" Margin="0,0,5,0"/>
 
                                 <!-- Thanh thời gian -->
-                                <Slider x:Name="TimelineSlider" Width="400" 
+                                <Slider x:Name="TimelineSlider" Width="569" 
             Minimum="0" Maximum="1" 
             ValueChanged="TimelineSlider_ValueChanged"
             PreviewMouseDown="TimelineSlider_PreviewMouseDown" 

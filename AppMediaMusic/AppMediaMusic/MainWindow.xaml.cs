@@ -18,6 +18,7 @@ namespace AppMediaMusic
         {
             InitializeComponent();
             SongDataGrid.ItemsSource = _songService.GetAllSongs();
+            _player.settings.volume = (int)(VolumeSlider.Value * 100);
         }
 
         public User AuthenticatedUser { get; set; }
@@ -100,6 +101,8 @@ namespace AppMediaMusic
                 StartTimer();
             }
         }
+
+        //THỜI LƯỢNG NHẠC
         private void Player_PlayStateChange(int NewState)
         {
             if (NewState == (int)WMPLib.WMPPlayState.wmppsPlaying)
@@ -142,6 +145,15 @@ namespace AppMediaMusic
             if (isDraggingSlider)
             {
                 CurrentTimeText.Text = TimeSpan.FromSeconds(TimelineSlider.Value).ToString(@"mm\:ss");
+            }
+        }
+
+        //ĐIỀU CHỈNH VOLUME
+        private void VolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (_player != null)
+            {
+                _player.settings.volume = (int)(VolumeSlider.Value * 100);
             }
         }
 

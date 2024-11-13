@@ -49,6 +49,7 @@ namespace AppMediaMusic
             }
             m.AuthenticatedUser = user;
             m.Show();
+            this.Hide();
         }
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {

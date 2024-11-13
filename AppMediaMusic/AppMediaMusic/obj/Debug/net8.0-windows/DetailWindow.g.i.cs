@@ -53,7 +53,7 @@ namespace AppMediaMusic {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppMediaMusic;V1.0.0.0;component/detailwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppMediaMusic;component/detailwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DetailWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
