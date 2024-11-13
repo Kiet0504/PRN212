@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Microsoft.Win32;
+using WMPLib;
 
 namespace AppMediaMusic
 {
@@ -24,7 +25,11 @@ namespace AppMediaMusic
             PlaylistId = playlistId;
             timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             timer.Tick += Timer_Tick;
+            isPaused = true;  // Assuming it should start as paused
+            PlayPauseButton.Content = "⏯ Play";  // Update button content to "Play" initially
         }
+
+    
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -77,26 +82,7 @@ namespace AppMediaMusic
         private void btn_previous_Click(object sender, RoutedEventArgs e) 
             => PlayTrackAtIndex(--currentIndex < 0 ? currentIndex = track_list.Items.Count - 1 : currentIndex);
 
-        private void btn_play_Click(object sender, RoutedEventArgs e)
-        {
-            if (isPaused)
-            {
-                mediaPlayer.Play();
-                isPaused = false;
-                timer.Start();
-            }
-            else
-            {
-                PlayTrackAtIndex(currentIndex);
-            }
-        }
-
-        private void btn_pause_Click(object sender, RoutedEventArgs e)
-        {
-            mediaPlayer.Pause();
-            isPaused = true;
-            timer.Stop();
-        }
+       
 
         private void PlaylistSongDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -140,31 +126,41 @@ namespace AppMediaMusic
             }
         }
 
+        private bool isPlaying = false;
+
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button playButton && playButton.Tag is string filePath && !string.IsNullOrEmpty(filePath))
+            if (isPlaying) return;
+            isPlaying = true;
+
+            if (sender is Button playButton)
             {
-                try
+                // Consider using Task.Run for asynchronous file path retrieval
+                string filePath = playButton.Tag as string;
+
+                if (!string.IsNullOrEmpty(filePath))
                 {
-                    mediaPlayer.Stop();
-                    mediaPlayer.Source = null;
+                    Task.Run(() =>
+                    {
+                        // Access file path here (potentially slow operation)
 
-                    mediaPlayer.Source = new Uri(Path.GetFullPath(filePath), UriKind.Absolute);
-                    mediaPlayer.Play();
-
-                    isPaused = false;
-                    timer.Start();
+                        Dispatcher.Invoke(() =>
+                        {
+                            SongDetail songDetailWindow = new SongDetail(filePath);
+                            songDetailWindow.Show();
+                        });
+                    });
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error playing file: {ex.Message}", "Playback Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("File path is missing or invalid.", "Playback Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("File path is missing or invalid.", "Playback Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+
+            isPlaying = false;
         }
+
+
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
@@ -243,6 +239,43 @@ namespace AppMediaMusic
             this.Close();
             mainWindow.Show();
         }
+
+
+
+        private bool bePlaying = false;
+
+
+        private void btn_playpause_Click(object sender, RoutedEventArgs e)
+        {
+            // Đảo ngược trạng thái isPaused
+            isPaused = !isPaused;
+
+            if (isPaused)
+            {
+                mediaPlayer.Pause();
+                timer.Stop();
+                PlayPauseButton.Content = "⏯ Play";
+                
+            }
+            else
+            {
+                if (!bePlaying)
+                {
+                    // Nếu bài hát chưa được phát, bắt đầu từ đầu
+                    currentIndex = 0;
+                    PlayTrackAtIndex(currentIndex);
+                    bePlaying = true;
+                }
+                else
+                {
+                    // Nếu bài hát đang phát, tiếp tục phát
+                    mediaPlayer.Play();
+                    timer.Start();
+                    PlayPauseButton.Content = "⏸ Pause";
+                }
+            }
+        }
+
 
         private void TimeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {

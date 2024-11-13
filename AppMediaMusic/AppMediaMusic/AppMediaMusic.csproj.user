@@ -10,6 +10,9 @@
     <Compile Update="PlaylistSelectionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="SongDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\SongItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PlaylistSelectionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SongDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\SongItem.xaml">

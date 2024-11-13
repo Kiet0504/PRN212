@@ -26,8 +26,7 @@
         <!-- Controls WrapPanel -->
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">
             <Button Content="Previous" x:Name="btn_previous" Width="100" Margin="5" Click="btn_previous_Click"/>
-            <Button Content="Play" x:Name="btn_play" Width="100" Margin="5" Click="btn_play_Click"/>
-            <Button Content="Pause" x:Name="btn_pause" Width="100" Margin="5" Click="btn_pause_Click"/>
+            <Button x:Name="PlayPauseButton" Content="⏯ Play" Margin="5" Width="75" Height="30" Click="btn_playpause_Click"/>
             <Button Content="Next" x:Name="btn_next" Width="100" Margin="5" Click="btn_next_Click"/>
             <Button Content="Delete" x:Name="btn_delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
             <Button Content="Open from Home" x:Name="btn_open_home" Width="100" Margin="5" Click="btn_open_home_Click"/>
