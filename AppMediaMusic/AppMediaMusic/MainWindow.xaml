@@ -3,8 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:uc="clr-namespace:AppMediaMusic.UserControls"
-         Height="700" Width="1050" ResizeMode="NoResize" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" >
-    <Border Background="White" CornerRadius="40"  Loaded="Window_Loaded" >
+        Height="430" Width="1050" ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" Loaded="Window_Loaded">
+
+    <Border Background="White" CornerRadius="40" Loaded="Window_Loaded">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="220"/>
@@ -13,14 +15,13 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="100"/>
+                <RowDefinition/>
+                <RowDefinition Height="12"/>
             </Grid.RowDefinitions>
 
-            <!--Menu app-->
+            <!-- Menu Section -->
             <Border Background="White" CornerRadius="40 0 0 40" Grid.RowSpan="2">
                 <StackPanel Margin="0 30 0 0">
-                    <!--Ellipses-->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="63 10 0 10">
                         <Ellipse Fill="#ff6258" Width="10" Height="10"/>
                         <Ellipse Fill="#ffbf2f" Width="10" Height="10" Margin="7 0"/>
@@ -36,26 +37,23 @@
                     </Button>
 
                     <Button x:Name="PlaylistButton" Style="{StaticResource menuButton}"
-                         Click="PlaylistButton_Click">
+                            Click="PlaylistButton_Click">
                         <Grid>
                             <TextBlock Text="Playlists" Margin="0 0 0 2"/>
                             <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"/>
                         </Grid>
                     </Button>
-                    <Button Content="Delete " Style="{StaticResource menuButton}"  Click="DeleteSongButton_Click"/>
-                    <Button Content="Add " Style="{StaticResource menuButton}"  Click="AddSongButton_Click"/>
-
-
-
+                    <Button Content="Delete" Style="{StaticResource menuButton}" Click="DeleteSongButton_Click"/>
+                    <Button Content="Add" Style="{StaticResource menuButton}" Click="AddSongButton_Click"/>
+                    <Button Content="Quit" Style="{StaticResource menuButton}" Click="QuitButton_Click"/>
                 </StackPanel>
-
             </Border>
 
-            <!--Music Section-->
-            <StackPanel Grid.Column="1" Background="White" Margin="40 60 10 0">
+            <!-- Music Section -->
+            <StackPanel Grid.Column="1" Background="White" Margin="40,60,67,5" Grid.ColumnSpan="2">
                 <TextBlock Text="Home" Style="{StaticResource titelText}"/>
 
-                <Border CornerRadius="20" Margin="0 20 0 0">
+                <Border CornerRadius="20" Margin="0 20 0 0" Width="700" Height="241">
                     <Border.Background>
                         <LinearGradientBrush>
                             <GradientStop Color="#30ad9a" Offset="0"/>
@@ -68,33 +66,50 @@
                     </Border.Effect>
 
                     <Grid>
-                        <Border Opacity="0.07" CornerRadius="20">
-                            <Border.Background>
-                                <ImageBrush ImageSource="/Images/Music.png"/>
-                            </Border.Background>
-                        </Border>
-
-                        <!-- Music List -->
-                        <StackPanel Margin="30">
+                        <StackPanel Margin="30,30,30,-63">
                             <TextBlock Text="Song List" Foreground="White" FontSize="26" FontWeight="Bold"/>
 
                             <!-- DataGrid for displaying Song data -->
-                            <DataGrid x:Name="SongDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Foreground="Black">
+                            <DataGrid x:Name="SongDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="Transparent" Foreground="Black" Height="111" Width="452">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Song ID" Binding="{Binding SongId}" Width="*"/>
-                                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
-                                    <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" Width="*"/>
+                                    <DataGridTextColumn Header="Song ID" Binding="{Binding SongId}" Width="65"/>
+                                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="100"/>
+                                    <DataGridTextColumn Header="Artist" Binding="{Binding Artist}" Width="100"/>
+                                    <DataGridTextColumn Header="Album" Binding="{Binding Album}" Width="85"/>
+                                    <DataGridTextColumn Header="Date Added" Binding="{Binding DateAdded}" Width="100"/>
                                 </DataGrid.Columns>
                             </DataGrid>
+
+                            <!-- Playback Controls -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+                                <Button Content="⏯ Play" Click="PlayButton_Click" Margin="5" Width="75" Height="30"/>
+                                <Button Content="⏸ Pause" Click="PauseButton_Click" Margin="5" Width="75"/>
+                                <Button Content="⏮" Click="RewindButton_Click" Margin="5" Width="30"/>
+                                <Button Content="⏭" Click="FastForwardButton_Click" Margin="5" Width="30"/>
+                                <Button Content="Previous" Click="PreviousButton_Click" Margin="5" Width="75"/>
+                                <Button Content="Next" Click="NextButton_Click" Margin="5" Width="75"/>
+                            </StackPanel>
+                            <!-- Thêm thanh thời gian vào XAML -->
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <!-- Thời gian hiện tại -->
+                                <TextBlock x:Name="CurrentTimeText" Text="0:00" VerticalAlignment="Center" Margin="0,0,5,0"/>
+
+                                <!-- Thanh thời gian -->
+                                <Slider x:Name="TimelineSlider" Width="400" 
+            Minimum="0" Maximum="1" 
+            ValueChanged="TimelineSlider_ValueChanged"
+            PreviewMouseDown="TimelineSlider_PreviewMouseDown" 
+            PreviewMouseUp="TimelineSlider_PreviewMouseUp"/>
+
+                                <!-- Tổng thời gian của bài nhạc -->
+                                <TextBlock x:Name="TotalTimeText" Text="0:00" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                            </StackPanel>
+
+
                         </StackPanel>
                     </Grid>
-
                 </Border>
-
             </StackPanel>
-            <Label x:Name="HelloMsgLabel" Grid.Column="2" Content="Label" HorizontalAlignment="Left" Height="49" Margin="207,42,0,0" VerticalAlignment="Top" Width="142"/>
-
         </Grid>
-
     </Border>
 </Window>

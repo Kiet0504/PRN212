@@ -21,9 +21,9 @@ namespace AppMediaMusic.BLL.Services
         {
             return _repo.GetAll();
         }
-        public void Add(string songName, string artist, string filePath)
+        public void Add(string songName, string artist, string filePath, DateTime dateAdded)
         {
-            _repo.Add(songName, artist, filePath);
+            _repo.Add(songName, artist, filePath, dateAdded);
         }
 
 

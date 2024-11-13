@@ -26,7 +26,7 @@ namespace AppMediaMusic.DAL.Repositories
             return _context.Songs.ToList();
             //                                 
         }
-        public void Add(string songName, string artist, string filePath)
+        public void Add(string songName, string artist, string filePath, DateTime dateAdded)
         {
             var existingSong = _context.Songs.FirstOrDefault(s => s.Title == songName);
 
@@ -40,7 +40,8 @@ namespace AppMediaMusic.DAL.Repositories
             {
                 Title = songName,
                 Artist = artist,
-                FilePath = filePath
+                FilePath = filePath,
+                CreatedAt = dateAdded
             };
             _context.Songs.Add(song);
             _context.SaveChanges();
