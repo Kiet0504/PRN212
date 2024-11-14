@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AppMediaMusic.DAL.Entities;
 
@@ -20,4 +21,7 @@ public partial class Song
     public DateTime? CreatedAt { get; set; }
 
     public virtual ICollection<PlaylistSong> PlaylistSongs { get; set; } = new List<PlaylistSong>();
+
+    [NotMapped] // Ensures that this property is not saved to the database
+    public byte[] AlbumArt { get; set; }
 }

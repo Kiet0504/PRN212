@@ -36,10 +36,10 @@ namespace AppMediaMusic
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           
-            PlayListDataGrid.Items.Clear();
 
-            PlayListDataGrid.ItemsSource = _service.GetPlaylistsByUserId(UserId);
+            PlayListListView.Items.Clear();
+
+            PlayListListView.ItemsSource = _service.GetPlaylistsByUserId(UserId);
 
 
         }
@@ -108,14 +108,14 @@ namespace AppMediaMusic
         private void FillDataGrid()
         {
             var playlists = _service.GetPlaylistsByUserId(UserId);
-            PlayListDataGrid.ItemsSource = null; // Xóa dữ liệu cũ
-            PlayListDataGrid.ItemsSource = playlists; // Gán dữ liệu mới vào DataGrid
+            PlayListListView.ItemsSource = null; // Xóa dữ liệu cũ
+            PlayListListView.ItemsSource = playlists; // Gán dữ liệu mới vào DataGrid
         }
 
         private void DeletePlayListButton_Click(object sender, RoutedEventArgs e)
         {
 
-            var selectedItem = PlayListDataGrid.SelectedItem;
+            var selectedItem = PlayListListView.SelectedItem;
            
             Playlist? selected = selectedItem as Playlist;
 
@@ -135,7 +135,7 @@ namespace AppMediaMusic
 
         private void UpdatePlayListButton_Click(object sender, RoutedEventArgs e)
         {
-            var selectedItem = PlayListDataGrid.SelectedItem;
+            var selectedItem = PlayListListView.SelectedItem;
 
             if (selectedItem is Playlist selectedPlaylist)
             {
@@ -151,7 +151,7 @@ namespace AppMediaMusic
 
         private void SaveUpdatedPlaylist_Click(object sender, RoutedEventArgs e)
         {
-            var selectedItem = PlayListDataGrid.SelectedItem;
+            var selectedItem = PlayListListView.SelectedItem;
             string playlistName = UpdatePlaylistNameTextBox.Text;
 
 
