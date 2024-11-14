@@ -1,7 +1,10 @@
 ﻿using AppMediaMusic.BLL.Services;
 using System;
 using System.Windows;
+using System.Windows.Media.Animation;
+using System.Windows.Media;
 using WMPLib;
+using System.Windows.Media.Imaging;
 
 namespace AppMediaMusic
 {
@@ -24,7 +27,7 @@ namespace AppMediaMusic
             songList = allSongs.Select(song => song.FilePath).ToList(); // Extract file paths to a list of strings
 
             PlaySong(currentFilePath); // Play the current song
-
+            StartRotation(); // Start rotating the element when the window loads and song plays
             this.Closing += SongDetail_Closing;
         }
 
@@ -180,5 +183,58 @@ namespace AppMediaMusic
             _player.controls.currentPosition = newPosition;
             TimelineSlider.Value = newPosition;
         }
+
+        private void StartRotation()
+        {
+            //rotatingImage.Source = new BitmapImage(new Uri("C:\\Users\\ASUS\\Downloads\\pngwing.com.png"));
+            DoubleAnimation rotationAnimation = new DoubleAnimation
+            {
+                From = 0,
+                To = 360,
+                Duration = TimeSpan.FromSeconds(1), // Adjust speed as needed
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            rotateTransform.BeginAnimation(RotateTransform.AngleProperty, rotationAnimation);
+        }
+
+        //Start the Rotation When Playing Music
+        private void StartRotationWhenPlayMusic(string filePath)
+        {
+            _player.URL = filePath;
+            _player.controls.play();
+            _player.PlayStateChange += Player_PlayStateChange;
+            StartTimer();
+
+            UpdateSongInfo(filePath);
+            StartRotation(); // Start rotation when the song plays
+        }
+
+        //Stop the Rotation When Paused
+        private void PlayPauseWhenClick(object sender, RoutedEventArgs e)
+        {
+            if (_player.playState == WMPPlayState.wmppsPlaying)
+            {
+                _player.controls.pause();
+                PlayPauseButton.Content = "⏯ Play";
+
+                // Stop rotation when paused
+                rotateTransform.BeginAnimation(RotateTransform.AngleProperty, null);
+            }
+            else
+            {
+                if (_player.URL != currentFilePath)
+                {
+                    _player.URL = currentFilePath;
+                }
+                _player.controls.play();
+                PlayPauseButton.Content = "⏸ Pause";
+
+                // Resume rotation when playing
+                StartRotation();
+            }
+        }
+
+
     }
 }

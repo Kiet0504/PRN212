@@ -5,15 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppMediaMusic"
         mc:Ignorable="d"
-        Title="SongDetail" Height="450" Width="800">
+        Title="SongDetail" Height="500" Width="800">
 
     <Grid Margin="20">
         <MediaElement x:Name="mediaPlayer" LoadedBehavior="Manual" UnloadedBehavior="Stop" />
         <!-- Song Title and Artist -->
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0">
-            <TextBlock x:Name="SongTitleText" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBlock x:Name="ArtistNameText" FontSize="18" HorizontalAlignment="Center"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">
+            <TextBlock x:Name="SongTitleText" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#2acb42"/>
+            <TextBlock x:Name="ArtistNameText" FontSize="18" HorizontalAlignment="Center" Foreground="#ffbf2f"/>
         </StackPanel>
+
+        <!---Music image disk-->
+        <Image Width="40" Height="40" 
+       Source="{Binding AlbumArt, Converter={StaticResource ByteArrayToImageConverter}}" 
+       RenderTransformOrigin="0.5, 0.5" Margin="296,78,296,144">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="rotateTransform" />
+            </Image.RenderTransform>
+        </Image>
 
         <!-- Seek Bar and Time -->
         <StackPanel Orientation="Horizontal" Margin="158,277,121,100">
@@ -34,13 +43,115 @@
         <!-- Media Controls -->
         <!-- Playback Controls -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,304,0,40" Height="50">
-            <Button x:Name="PlayPauseButton" Content="⏸ Pause" Margin="5" Width="75" Height="30" Click="PlayPause_Click"/>
-            <Button Content="⏮" Margin="5" Width="30" Click="RewindButton_Click" />
-            <Button Content="⏭" Margin="5" Width="30" Click="FastForwardButton_Click"/>
-            <Button Content="Previous" Margin="5" Width="75" Click="Previous_Click"/>
-            <Button Content="Next" Margin="5" Width="75" Click="Next_Click"/>
+            <Button x:Name="PlayPauseButton"
+        Content="⏸ Pause"
+        Margin="5"
+        Width="75"
+        Height="40"
+        Click="PlayPause_Click"
+        Background="#2acb42"
+        Foreground="#FFF"
+        BorderThickness="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Border radius -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="⏮"
+        Margin="5"
+        Width="45"
+        Click="RewindButton_Click"
+        Background="#ffbf2f"
+        Foreground="#FFF"
+        BorderThickness="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Border radius -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="⏭"
+        Margin="5"
+        Width="45"
+        Click="FastForwardButton_Click"
+        Background="#ffbf2f"
+        Foreground="#FFF"
+        BorderThickness="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Border radius -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="Previous"
+        Margin="5"
+        Width="75"
+        Click="Previous_Click"
+        Background="#2acb42"
+        Foreground="#FFF"
+        BorderThickness="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Border radius -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="Next"
+        Margin="5"
+        Width="75"
+        Click="Next_Click"
+        Background="#ffbf2f"
+        Foreground="#FFF"
+        BorderThickness="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Border radius -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <TextBlock Text="Volume" VerticalAlignment="Center" Margin="10,0,5,0"/>
             <Slider x:Name="VolumeSlider" Width="100" Minimum="0" Maximum="1" Value="0.5" ValueChanged="VolumeSlider_ValueChanged" Height="19"/>
         </StackPanel>
+
+        <Image Source="D:\Design\Resources\Component\F-Code\Components\Components_3.png" Margin="639,52,-167,-236"/>
+        <Image Source="D:\Design\Resources\Component\F-Code\Components\Components_6.png" Margin="-106,-104,656,86"/>
+        <Image Source="D:\Design\Resources\Component\F-Code\Components\Components_4.png" Margin="612,-138,10,262"/>
+        <Image Source="D:\Design\Resources\Component\F-Code\Components\Components_5.png" Margin="0,280,656,-89"/>
     </Grid>
 </Window>
