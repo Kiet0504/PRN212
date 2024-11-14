@@ -72,18 +72,3 @@ C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\re
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.pdb
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\ref\AppMediaMusic.DAL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.deps.json
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.runtimeconfig.json
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\bin\Debug\net8.0\AppMediaMusic.DAL.pdb
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.csproj.AssemblyReference.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.AssemblyInfoInputs.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.AssemblyInfo.cs
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.csproj.CoreCompileInputs.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.sourcelink.json
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\refint\AppMediaMusic.DAL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.pdb
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\AppMediaMusic.DAL.genruntimeconfig.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.DAL\obj\Debug\net8.0\ref\AppMediaMusic.DAL.dll

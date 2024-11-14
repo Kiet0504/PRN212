@@ -60,7 +60,7 @@ namespace AppMediaMusic {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppMediaMusic;V1.0.0.0;component/playlistselectionwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppMediaMusic;component/playlistselectionwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PlaylistSelectionWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

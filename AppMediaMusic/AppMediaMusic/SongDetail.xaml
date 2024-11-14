@@ -16,9 +16,7 @@
         </StackPanel>
 
         <!---Music image disk-->
-        <Image Width="40" Height="40" 
-       Source="{Binding AlbumArt, Converter={StaticResource ByteArrayToImageConverter}}" 
-       RenderTransformOrigin="0.5, 0.5" Margin="296,78,296,144">
+        <Image Width="100" Height="100" Source="{Binding songImage.AlbumArt, Converter={StaticResource ByteArrayToImageConverter}}">
             <Image.RenderTransform>
                 <RotateTransform x:Name="rotateTransform" />
             </Image.RenderTransform>

@@ -5,6 +5,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media;
 using WMPLib;
 using System.Windows.Media.Imaging;
+using AppMediaMusic.DAL.Entities;
 
 namespace AppMediaMusic
 {
@@ -29,6 +30,7 @@ namespace AppMediaMusic
             PlaySong(currentFilePath); // Play the current song
             StartRotation(); // Start rotating the element when the window loads and song plays
             this.Closing += SongDetail_Closing;
+            Song songImage = allSongs.FirstOrDefault(song => song.FilePath == filePath);
         }
 
         private void SongDetail_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -186,7 +188,6 @@ namespace AppMediaMusic
 
         private void StartRotation()
         {
-            //rotatingImage.Source = new BitmapImage(new Uri("C:\\Users\\ASUS\\Downloads\\pngwing.com.png"));
             DoubleAnimation rotationAnimation = new DoubleAnimation
             {
                 From = 0,
@@ -233,6 +234,11 @@ namespace AppMediaMusic
                 // Resume rotation when playing
                 StartRotation();
             }
+        }
+
+        public void GetAllImages()
+        {
+            
         }
 
 

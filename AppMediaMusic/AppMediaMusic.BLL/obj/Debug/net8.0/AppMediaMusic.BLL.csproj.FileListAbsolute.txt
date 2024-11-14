@@ -77,19 +77,3 @@ C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\Ap
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\refint\AppMediaMusic.BLL.dll
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.pdb
 C:\Users\ASUS\Desktop\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\ref\AppMediaMusic.BLL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.deps.json
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.BLL.pdb
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.DAL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\bin\Debug\net8.0\AppMediaMusic.DAL.pdb
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.csproj.AssemblyReference.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.GeneratedMSBuildEditorConfig.editorconfig
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.AssemblyInfoInputs.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.AssemblyInfo.cs
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.csproj.CoreCompileInputs.cache
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.sourcelink.json
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMedia.6271179B.Up2Date
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\refint\AppMediaMusic.BLL.dll
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\AppMediaMusic.BLL.pdb
-D:\Study\Semester 5\PRN212\Assignment\PRN212\AppMediaMusic\AppMediaMusic.BLL\obj\Debug\net8.0\ref\AppMediaMusic.BLL.dll
