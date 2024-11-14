@@ -72,9 +72,15 @@
                     </Border.Effect>
 
                     <Grid>
+
+                        <Border Opacity="0.07" CornerRadius="20">
+                            <Border.Background>
+                                <ImageBrush ImageSource="/Images/Music.png"/>
+                            </Border.Background>
+
+                        </Border>
+
                         <StackPanel Margin="30,30,30,-63">
-
-
 
                             <TextBlock Text="Song List" Foreground="White" FontSize="26" FontWeight="Bold" Height="34"/>
 
@@ -135,7 +141,7 @@
                                                             <ControlTemplate TargetType="Button">
                                                                 <Grid Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                                     <!-- Heart Icon -->
-                                                            
+
                                                                     <Path Data="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5  c0-3.04,2.46-5.5,5.5-5.5c2.35,0,4.42,1.65,5.5,4.09C13.08,4.65,15.15,3,17.5,3c3.04,0,5.5,2.46,5.5,5.5  c0,3.78-3.4,6.86-8.55,11.54L12,21.35z" Fill="#FF4081" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Width="14" Height="14"/>
                                                                 </Grid>
                                                             </ControlTemplate>
@@ -202,27 +208,27 @@
 
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0"/>
                         </StackPanel>
-                        <Slider Name="TimelineSlider" 
-        Minimum="0" 
-        Maximum="100" 
-        Value="0" 
-        TickFrequency="1" 
-        IsSnapToTickEnabled="True" 
-        SmallChange="1" 
-        LargeChange="10" 
-        HorizontalAlignment="Stretch" 
-        VerticalAlignment="Bottom" 
-        ValueChanged="TimelineSlider_ValueChanged"
-                                Margin="58,269,234,8"/>
+                                                    <StackPanel Orientation="Horizontal" Margin="20,268,128,8">
+                                <!-- Thời gian hiện tại -->
+                                <TextBlock x:Name="CurrentTimeText" Text="0:00" VerticalAlignment="Center" Margin="0,0,5,0" Width="30"/>
 
+                                <!-- Thanh thời gian -->
+                                <Slider x:Name="TimelineSlider" Width="433" 
+            Minimum="0" Maximum="1" 
+            ValueChanged="TimelineSlider_ValueChanged"
+            PreviewMouseDown="TimelineSlider_PreviewMouseDown" 
+            PreviewMouseUp="TimelineSlider_PreviewMouseUp"/>
 
-                        <TextBlock x:Name="TotalTimeText" Text="00:00" VerticalAlignment="Top" Margin="471,268,207,0"/>
-                        <TextBlock x:Name="CurrentTimeText" Text="00:00" VerticalAlignment="Top" Margin="30,269,648,0"/>
+                                <!-- Tổng thời gian của bài nhạc -->
+                                <TextBlock x:Name="TotalTimeText" Text="0:00" VerticalAlignment="Center" Margin="5,0,0,0" Width="29"/>
+                            </StackPanel>
                         <Button x:Name="PauseButton" Content="⏸ Pause" Click="PauseButton_Click" Margin="480,39,145,236"/>
                         <Button Content="Next" Click="NextButton_Click" Margin="595,39,30,236"/>
                         <Button Content="Previous" Click="PreviousButton_Click" Margin="364,39,261,236"/>
                         <Button Content="⏭" Click="FastForwardButton_Click" Margin="560,39,110,236"/>
                         <Button Content="⏮" Click="RewindButton_Click" Margin="444,39,226,236"/>
+                        <Button x:Name="ShuffleButton" Content="🔀" Click="ShuffleButton_Click" Margin="294,39,376,236"/>
+                        <Button x:Name="RepeatOneButton" Content="🔁" Click="RepeatOneButton_Click" Margin="329,39,341,236"/>
                         <Slider x:Name="VolumeSlider" Minimum="0" Maximum="1" Value="0.5" ValueChanged="VolumeSlider_ValueChanged" Margin="575,268,25,8"/>
                         <TextBlock Text="Volume" Margin="536,269,125,11"/>
                     </Grid>
